@@ -13,10 +13,9 @@ public class BankingAppSpringApplication {
 		SpringApplication.run(BankingAppSpringApplication.class, args);
 	}
 
-	@GetMapping
+	@GetMapping("/hello")
 	public String hello() {
 		System.out.println("hello world");
 		return "Hello World!";
 	}
-
 }

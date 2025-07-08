@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Banking Application</title>
+</head>
+<body>
+    <h1>Welcome to the Bank™</h1>
+    <p>Name of this Spring Boot app is: <span th:text="${appName}">!</span></p>
+    <ul>
+        <li th:each="user : ${users}" th:text="${user.username} + ' (Password: ' + ${user.password} + ')'"></li>
+    </ul>
+</body>
+</html>

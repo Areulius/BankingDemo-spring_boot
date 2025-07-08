@@ -1,11 +1,23 @@
-package com.bankingApp;
+package com.bankingApp.Entities;
+
+import jakarta.persistence.*;
 
 import java.util.ArrayList;
+import java.util.List;
 
+@Entity
+@Table(name = "bank_user")
 public class BankUser {
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private Long id;
+
     private String username;
     private String password;
-    private final ArrayList<BankAccount> userAccounts =  new ArrayList<>();
+
+    //One-to-many relationship setup to BankAccounts
+    @OneToMany(mappedBy = "connectedUser", cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<BankAccount> accounts = new ArrayList<>();
 
     // Constructors
     public BankUser() {}

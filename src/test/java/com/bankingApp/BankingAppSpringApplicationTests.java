@@ -8,6 +8,7 @@ class BankingAppSpringApplicationTests {
 
 	@Test
 	void contextLoads() {
+
 	}
 
 }
